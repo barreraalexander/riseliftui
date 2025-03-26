@@ -3,10 +3,17 @@
 import { FormEvent, MouseEvent, ChangeEvent } from 'react'
 
 import { get_cookie } from '@/app/actions/cookieActions';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
+import { UserDashboardContext } from '../../userDashboardConstData';
+// import { userDashboardConstData } from '../../userDashboardConstData';
 
 export default function UpdateExerciseRow(props: any){
+    // const { data, setData } = useContext(UserDashboardContext);
+    const { targetMuscles } = useContext(UserDashboardContext);
+    // const { targetMuscles } = userDashboardConstData;
+
+
 
     // const [inputValue, setInputValue] = useState({});
 
@@ -81,6 +88,7 @@ export default function UpdateExerciseRow(props: any){
 
             if (response.ok){
                 props.setLoading(true)
+                // setData({"message": "Cool new message"})
             }   
         }
 
@@ -113,9 +121,13 @@ export default function UpdateExerciseRow(props: any){
                         Primary Target
                     </label>
                     <select name="" id="" className="form-select">
-                        <option value="0">
-                            Select the Muscle
-                        </option>
+                        {targetMuscles.map((muscle: string) => (
+                            <option key={muscle}>
+                                {muscle}
+                            </option>
+                        ))}
+
+
                     </select>
                 </div>
 

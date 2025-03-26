@@ -13,6 +13,21 @@ type NewExercise = {
     id: number;
 }
 
+export type UserDashboardConstData = {
+    targetMuscles: string[] | null;
+    targetMuscleOptions: {} | null;
+
+}
+// export interface UserDashboardConstData {
+//     targetMuscles: string[] | null
+
+// }
+
+export interface UserDashboardContextProps {
+    userDashboardConstData: UserDashboardConstData
+    // setUserDashboardConstData: any
+}
+
 
 
 export type WorkoutHistory = Workout[] 

@@ -11,46 +11,20 @@ import StartWorkout from './components/start_workout_card';
 import ExercisesCard from './components/exercises_card';
 import WorkoutHistoryCard from './components/workout_history_card';
 
+import { UserDashboardContextProvider } from './userDashboardConstData';
+
 
 export default function Dashboard(){
     
-
-
-    // useEffect(() => {
-    //     alert('once')
-
-    //     const fetchData = async () => {
-    //         const user_cookie = await get_cookie("bearer_token")
-
-
-
-            
-    //         if (user_cookie){
-
-
-    //         }
-    
-    //     };
-    
-    //     fetchData()
-    
-    // }, []);
-    
-
-
-
-
-
-
-
-
     return (
     <div className="bg-dark text-white p-2" style={{"minHeight":"100vh"}}>
         <div className="d-flex flex-column gap-5">
-            <StartWorkout/>
-            <UserHub/>
-            <ExercisesCard/>
-            <WorkoutHistoryCard/>
+            <UserDashboardContextProvider>
+                <StartWorkout/>
+                <UserHub/>
+                <ExercisesCard/>
+                <WorkoutHistoryCard/>
+            </UserDashboardContextProvider>
 
         </div>
 
