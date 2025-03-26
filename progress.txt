@@ -1,3 +1,35 @@
+01/27/2025
+
+* The next thing to work on is the code regarding "Start a Workout". After 
+
+
+
+
+GET THE APP STARTED
+cd riselift
+npm run dev
+
+12-12-2024
+
+click "startworkout clicked"
+prop of id is now stored inside of component -- maybe a setId useState needs to be created to pass the xid of the workout session back
+
+
+12/09/2024
+
+On the right side of the exercises panel,
+try to have a slot that shows all of the different
+body parts and the exercises that the users have created
+for each of the parts
+
+
+                    <li key={item.id}>
+                        {item.name}: {item.value}
+                        <button onClick={() => removeItem(item.id)}>Remove</button>
+                        <button onClick={() => updateItem(item.id, { value: 'Updated' })}>Update</button>
+                    </li>
+
+
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/login">Login</RouterLink>f

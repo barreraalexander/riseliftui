@@ -1,7 +1,10 @@
 'use client'; 
 
+import { cookies } from 'next/headers';
+
 import { FormEvent } from 'react'
-// import { useEffect } from 'react';
+
+
 import RedAsterisk from '@/app/common_components/red_asterisk';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +12,9 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 import { redirect } from 'next/navigation'
 
+import { create_cookie } from '@/app/actions/cookieActions'; 
+
+import RequiredFieldsMessage from '@/app/common_components/required_fields_message';
 
 export default function RegisterForm() {
 
@@ -47,7 +53,7 @@ export default function RegisterForm() {
 
 
         if (response.ok){
-            let target = document.querySelector("#registration_submit_button")
+            let target = document.querySelector("#registration_submit_button") as HTMLButtonElement
             if (target){
                 target.disabled = true
                 target.classList.remove('btn-primary')
@@ -55,7 +61,43 @@ export default function RegisterForm() {
                 let new_element = document.createElement('p')
                 new_element.textContent = "Successfully created your account, logging in now."
 
-                redirect('/auth/dashboard')
+
+                const login_form_data = new FormData();
+                login_form_data.append("username", data.email);
+                if (formData != null){
+                    const pw = formData.get('password')
+                    // alert(pw)
+
+
+                    login_form_data.append("password", pw);
+
+                }
+
+
+
+                const response2 = await fetch(`${api_url}/login`, {
+                    method: 'POST',
+                    body: login_form_data,
+                })
+            
+
+                const data2 = await response2.json()
+
+
+                // console.log(data2)
+
+                if (response2.ok){
+                    create_cookie(data2.access_token)
+                    
+                    
+                    redirect('/auth/dashboard')
+
+
+
+
+                }
+
+
 
 
             }
@@ -90,11 +132,7 @@ export default function RegisterForm() {
         <form className="p-2" onSubmit={onSubmit}>
             
             <div className="d-flex flex-column gap-3">
-                <div className="form-group">
-                    <small id="emailHelp" className="form-text text-danger">
-                    *Fields with a red asterisk are required. 
-                    </small>
-                </div>
+                <RequiredFieldsMessage/>
 
                 <div className="d-flex gap-3 ">
 
@@ -182,7 +220,7 @@ export default function RegisterForm() {
 
                 <div className="form-group mt-2">
                     <button id='registration_submit_button' className="btn btn-primary" type="submit">
-                    <FontAwesomeIcon icon={faPaperPlane} /> Submit
+                        <FontAwesomeIcon icon={faPaperPlane} /> Submit
                     </button>
                 </div>
 
