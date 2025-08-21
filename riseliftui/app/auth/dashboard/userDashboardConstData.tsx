@@ -79,7 +79,7 @@ export const UserDashboardContext = React.createContext<UserDashboardConstData>(
 
 export const UserDashboardContextProvider = (
     {children} : {children: React.ReactNode}
-    ) => {
+) => {
 
     // const [targetMuscles, setTargetMuscles] = useState(defaultUserDashboardConstData);
     // const [userDashboardConstData, setUserDashboardConstData] = useState<UserDashboardContextProps>({targetMuscles: []});
@@ -95,10 +95,10 @@ export const UserDashboardContextProvider = (
 
             const user_dashboard_const_data = await get_user_dashboard_const_data()
 
-            console.log(user_dashboard_const_data)
-
             setTargetMuscles(user_dashboard_const_data.targetMuscles)
             
+
+
 
 
         }

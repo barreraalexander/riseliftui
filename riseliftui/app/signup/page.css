@@ -1,0 +1,41 @@
+#page-signup{
+    display: flex;
+    flex-flow: row;
+    min-height: 100vh;
+    background: rgb(89,50,11);
+    background: radial-gradient(circle, rgb(249, 136, 23) 0%, rgba(255,127,1,1) 100%);
+}
+
+
+#riselift-promotional{
+    background-color: red;
+    flex: .5;
+    
+
+}
+
+#component-register-form{
+    flex: 1;
+    /* color: #fff; */
+}
+
+
+
+#component-register-form{
+    display: flex;
+    margin-top: 5em;
+    height: max-content;
+    justify-content: center;    
+}
+
+#component-register-form .register_form_container{
+    padding: 2em;
+    border-radius: var(--common_border_radius);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    background-color: #fff;
+    width: 90%;
+}

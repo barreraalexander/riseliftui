@@ -33,7 +33,6 @@ export async function get_cookie(name: string) {
         })
 
         const data = await response.json()
-        console.log(data)
         
         if (response.ok){
             return token

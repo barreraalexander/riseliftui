@@ -1,0 +1,52 @@
+.introduction_section{
+    height: 100vh;
+    background-color: var(--solar2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uprise_circle{
+    background-color: var(--solar3);
+    padding: 2em;
+    border-radius: 50%;
+    height: 40em;
+    width: 40em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    color: #fff;
+    gap: .25em;
+}
+
+
+.pulse_blob {
+
+
+    /* box-shadow: 0 0 0 0 rgba(124, 32, 58, 1); */
+    transform: scale(1);
+    animation: pulse 20s infinite;
+
+
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        /* box-shadow: 0 0 0 0 rgba(124, 32, 58, 1); */
+    }
+
+    70% {
+        transform: scale(1);
+        /* box-shadow: 0 0 0 10px rgba(124, 32, 58, .8); */
+    }
+
+    100% {
+        transform: scale(0.95);
+        /* box-shadow: 0 0 0 0 rgba(124, 32, 58, 1); */
+    }
+}

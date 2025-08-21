@@ -15,7 +15,7 @@ export default function WorkingOutCard(
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         workoutSession.name = event.target.value
-        console.log(workoutSession)
+        // console.log(workoutSession)
         setworkoutSession(workoutSession)
     };
 

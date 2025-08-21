@@ -1,0 +1,35 @@
+.explanation_section{
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mercury_img{
+    /* filter: blur(100px); */
+
+}
+
+.steps_card{
+    min-height: 40em;
+}
+
+.app_explanation{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column;
+    /* background-color: red; */
+    flex: 1;
+    /* padding: 2em; */
+    /* align-self: flex-start; */
+
+}
+
+.app_explanation .nav-link{
+    color: #fff;
+}

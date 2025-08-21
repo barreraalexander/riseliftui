@@ -1,11 +1,34 @@
+'use client'
+
 import { get_cookie } from '@/app/actions/cookieActions';
 import { MouseEvent} from 'react'
 import { json } from 'stream/consumers';
 import React, { useState, useEffect } from 'react';
 
-import WorkingOutCard from './working_out_card';
-// make this an FC?
-export default function WorkoutCardHeader(
+// import React, { useState, useEffect } from 'react';
+
+// import WorkoutCardHeader from './units/workout_card_header';
+
+
+export default function StartWorkout(){
+
+    const [sessionStarted, setSessionStarted] = useState(0)
+
+    return (
+        <div className="card w-100 text-white" style={{"backgroundColor":"#000"}}>
+            <div className="card-body">
+                <WorkoutCardHeader sessionStarted={sessionStarted} setSessionStarted={setSessionStarted}/>
+            </div>
+        </div>
+
+
+
+    )
+
+}
+
+
+function WorkoutCardHeader(
     sessionStarted: any,
     setsessionStarted: any,
     
@@ -56,7 +79,7 @@ export default function WorkoutCardHeader(
     async function endWorkoutClicked(event: MouseEvent<HTMLButtonElement>) {
         const api_url = process.env.NEXT_PUBLIC_BASE_URL;
         const user_cookie = await get_cookie("bearer_token")
-        console.log(workoutSessionXid)
+        // console.log(workoutSessionXid)
         if (user_cookie){
             const response = await fetch(`${api_url}/workout_session/${workoutSessionXid}`, {
                 method: 'PUT',

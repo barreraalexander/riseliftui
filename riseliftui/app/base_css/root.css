@@ -1,0 +1,26 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #ff7f01;
+    --mercury: #ff7f01;
+    --common_border_radius: 20px;
+
+    --solar1: #feff89;
+    --solar2: #ff9f68;
+    --solar3: #f85959;
+    --solar4: #7c203a;
+
+
+    --font-family1: var(--font-roboto-slab)
+    --font-family2: var(----font-montserrat)
+
+
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}

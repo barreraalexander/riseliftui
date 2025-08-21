@@ -1,3 +1,13 @@
+https://www.awwwards.com/sites/star-atlas
+
+
+04/09/2025
+
+I need a const data context for the app, I want it to just run once. It will store the brand name and other things like that. Phones numbers, contact emails etc.
+
+Would that get added to the layout.tsx? It seems so.  
+
+
 01/27/2025
 
 * The next thing to work on is the code regarding "Start a Workout". After 
